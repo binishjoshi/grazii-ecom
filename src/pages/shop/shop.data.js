@@ -163,7 +163,7 @@ const SHOP_DATA = [
           id: uniqid(),
           name: 'Blue Tanktop',
           imageUrl: 'https://i.ibb.co/7CQVJNm/blue-tank.png',
-          price: uniqid()
+          price: 79
         },
         {
           id: uniqid(),
