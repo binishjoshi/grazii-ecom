@@ -7,6 +7,15 @@
     img {
       width: 30%;
     }
+
+    .price {
+      display: flex;
+      
+      .arrow {
+        margin: 0 5px;
+        cursor: pointer;
+      }
+    }
   
     .item-details {
       width: 70%;
