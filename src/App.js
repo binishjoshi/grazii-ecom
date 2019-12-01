@@ -6,6 +6,7 @@ import { createStructuredSelector } from 'reselect';
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import Checkout from './pages/checkout/checkout.component';
+import Contact from './pages/contact/contact.component';
 
 import Header from './components/header/header.component';
 import SignInAndSignUp from './components/sign-in-and-sign-up/sign-in-and-sign-up.component';
@@ -55,6 +56,7 @@ class App extends React.Component {
           (<Redirect to='/' />) : 
           (<SignInAndSignUp />)} />
         <Route exact path='/checkout' component={Checkout} />
+        <Route exact path='/contact' component={Contact}/>
 
       </div>
     );
