@@ -3,21 +3,22 @@ import { connect } from 'react-redux';
 
 import { addItem, removeItem } from '../../redux/cart/cart.actions';
 
-import './cart-item.styles.scss';
+import { CartItemContainer, CartItemImage, ItemDetailsContainer, ArrowContainer, PriceContainer } from './cart-item.styles';
 
 const CartItem = ({cartItem, removeItem, addItem}) => {
     const {imageUrl, price, name, quantity } = cartItem;
     return (
-    <div className='cart-item'>
-        <img src={imageUrl} alt='item'/>
-        <div className='item-details'>
-        <span className='name'>{name}</span>
-        <span className='price'>
-            <div className='arrow' onClick={() => removeItem(cartItem)}>&#10094;</div>
-            <span className='value'>{quantity}</span>
-            <div className='arrow' onClick={() => addItem(cartItem)}>&#10095;</div> x ${price}</span>
-        </div>
-    </div>
+    <CartItemContainer>
+        <CartItemImage src={imageUrl} alt='item'/>
+        <ItemDetailsContainer>
+            <span className='name'>{name}</span>
+            <PriceContainer className='price'>
+                <ArrowContainer onClick={() => removeItem(cartItem)}>&#10094;</ArrowContainer>
+                <span className='value'>{quantity}</span>
+                <ArrowContainer onClick={() => addItem(cartItem)}>&#10095;</ArrowContainer> x ${price}
+            </PriceContainer>
+        </ItemDetailsContainer>
+    </CartItemContainer>
 )};
 
 const mapDispatchToProps = dispatch => ({
